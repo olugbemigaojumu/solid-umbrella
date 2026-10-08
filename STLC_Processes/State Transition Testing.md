@@ -12,7 +12,7 @@ The user first sees the start screen, then the ‘wait for pin’ screen. Then t
 
 
 
-### **Let's determine an appropriate solution for this.
+## Let's determine an appropriate solution for this.
 
 Given the ATM Machine Scenario above, we can determing the following states, events and transitions:
   
@@ -50,7 +50,7 @@ Let's make the state transitions into a table:
 |   S3     |   E3      |    S4    |    Show "Wrong PIN, 1 try left"     |
 |   S4     |   E2      |    S5    |    Grant access                     |
 |   S4     |   E3      |    S6    |    Eat the card                     |
-
+     
 
 Let's attempt to draw the state transition diagram:
 

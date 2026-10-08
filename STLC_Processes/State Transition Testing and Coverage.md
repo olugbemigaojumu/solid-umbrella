@@ -42,7 +42,7 @@ Given the ATM Machine Scenario above, we can determing the following states, eve
 Let's make the state transitions into a table:
 
 |   FROM   |   EVENT   |    TO    |        ACTION/OUTPUT                |
-|----------|===========|----------|-------------------------------------|
+|----------|-----------|----------|-------------------------------------|
 |   S1     |   E1      |    S2    |    Show "Enter PIN" screen          |
 |   S2     |   E2      |    S5    |    Grant access                     |
 |   S1     |   E1      |    S2    |    Show "Wrong PIN, 2 tries left"   |

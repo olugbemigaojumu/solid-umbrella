@@ -48,7 +48,6 @@
    | Student        | NO | NO | NO | NO |YES |YES |YES |YES | NO | NO  | NO  | NO  | YES | YES | YES | YES |
    | Off-Peak       | NO | NO |YES |YES | NO | NO |YES |YES | NO | NO  | YES | YES | NO  | NO  | YES | YES |
    | Bahn Card      | NO |YES | NO |YES | NO |YES | NO |YES | NO | YES | NO  | YES | NO  | YES | NO  | YES |
-   
    | Total Discount | 0% | 5% |10% |15% |15% |20% |25% |30% |20% | 25% | 30% | 35% | 35% | 40% | 45% | 50% |
 
    Each rule becomes one test case, so we get 16 test cases if we were to write test cases for this.

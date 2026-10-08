@@ -45,11 +45,11 @@ Let's make the state transitions into a table:
 |----------|-----------|----------|-------------------------------------|
 |   S1     |   E1      |    S2    |    Show "Enter PIN" screen          |
 |   S2     |   E2      |    S5    |    Grant access                     |
-|   S1     |   E1      |    S2    |    Show "Wrong PIN, 2 tries left"   |
-|   S1     |   E1      |    S2    |    Grant access                     |
-|   S1     |   E1      |    S2    |    Show "Wrong PIN, 1 try left"     |
-|   S1     |   E1      |    S2    |    Grant access                     |
-|   S1     |   E1      |    S2    |    Eat the card                     |
+|   S2     |   E3      |    S3    |    Show "Wrong PIN, 2 tries left"   |
+|   S3     |   E2      |    S5    |    Grant access                     |
+|   S3     |   E3      |    S4    |    Show "Wrong PIN, 1 try left"     |
+|   S4     |   E2      |    S5    |    Grant access                     |
+|   S4     |   E3      |    S6    |    Eat the card                     |
 
 
 Let's attempt to draw the state transition diagram:

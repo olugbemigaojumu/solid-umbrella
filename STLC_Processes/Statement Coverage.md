@@ -40,7 +40,7 @@ To answer the first question, the test set does not fully cover the code, as the
 Let us calculate the coverages to determine the proper results.
 
 
-1. Let's draw a directed acyclic graph showing the state transition diagram for this code section:
+## 1. Let's draw a directed acyclic graph showing the state transition diagram for this code section:
 
 <img width="896" height="743" alt="image" src="https://github.com/user-attachments/assets/01beffbc-9b93-40e0-b45a-63131e5237f8" />
 

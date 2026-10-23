@@ -59,7 +59,7 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 |----|---------|-------------------------------------|
 | F1 | Product Rating System | Logged-in users rate a product with 1 to 5 whole stars and can add optional written feedback of 10 to 500 characters. One rating per user and product, which the user can edit or delete. The product page, search results and category lists show the average and the number of ratings. A product without ratings shows a "no ratings yet" message. |
 | F2 | Age Verification for Alcoholic Products | When a user opens the alcoholic products category, a modal asks for the date of birth before any product is shown. Users of 18 or older get access for the session. Under 18, invalid or dismissed input must keep alcoholic products inaccessible, also through search, favorites, basket and direct URLs. |
-| F3 | Shipping Cost Changes | Orders above 50 € have free shipping. Orders of 50 € or less pay a flat shipping fee of 4.95 € including VAT. The cost is shown in the basket, at checkout, in the order summary, in the confirmation email and on the invoice. The total updates immediately when the basket changes. |
+| F3 | Shipping Cost Changes | Orders up to 50 € have free shipping. Orders below 50 € pay a flat shipping fee of 4.95 € including VAT. The cost is shown in the basket, at checkout, in the order summary, in the confirmation email and on the invoice. The total updates immediately when the basket changes. |
 
 **Areas of the existing shop affected by the new features**
 
@@ -86,7 +86,6 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 - **Out of Scope:**
     - Internal behavior of the payment gateway and other third-party services
     - Real identity checks (ID or third-party age verification), because the requirement is a self-declaration of the age
-    - Carrier and delivery integration
     - Legal approval of the age verification method (handled by compliance)
     - Load tests beyond the expected load
 
@@ -94,9 +93,9 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 
 | Feature | Test types and techniques |
 |---------|---------------------------|
-| F1 Product Rating | Functional testing, equivalence partitioning and boundary value analysis (stars 0 to 6, review length 0, 9, 10, 500, 501), average calculation tests, negative tests (HTML, links, empty input), usability testing |
-| F2 Age Verification | State transition testing (unverified, verified, blocked, modal dismissed), boundary value analysis (age 17 and 18, born exactly 18 years ago), invalid input tests, access tests for every route (search, favorites, basket, direct URL), security tests (bypass of the check) |
-| F3 Shipping Costs | Boundary value analysis around 50 € (49.99 €, 50.00 €, 50.01 €), decision table testing (threshold, discount, voucher, VAT), calculation checks of the total price, API tests with Postman, regression of checkout |
+| F1 - Product Rating | Functional testing, equivalence partitioning and boundary value analysis (stars 0 to 6, review length 0, 9, 10, 500, 501), average calculation tests, negative tests (HTML, links, empty input), usability testing |
+| F2 - Age Verification | State transition testing (unverified, verified, blocked, modal dismissed), boundary value analysis (age 17 and 18, born exactly 18 years ago), invalid input tests, access tests for every route (search, favorites, basket, direct URL), security tests (bypass of the check) |
+| F3 - Shipping Costs | Boundary value analysis around 50 € (49.99 €, 50.00 €, 50.01 €), decision table testing (threshold, discount, voucher, VAT), calculation checks of the total price, API tests with Postman, regression of checkout |
 | All | Smoke test on every new build, regression testing, GUI and cross-browser testing, accessibility checks, performance testing, security testing (XSS in review text, tampering with shipping cost through the API), exploratory testing, user acceptance testing (UAT) |
 
 **Automation:** Stable regression and API checks are automated (Python, Selenium, Pytest, Postman). New features are tested manually first and automated once they are stable.
@@ -143,7 +142,7 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 ### Entry Criteria
 
 - The requirements are approved and the open questions are answered and documented in the Requirements Q&A Log, including the values 50 € (free shipping threshold), 4.95 € (shipping fee) and 10 to 500 characters (review text).
-- The test plan is approved by the Test Manager (Jane Smith).
+- The test plan is approved by the Test Manager.
 - Test cases are designed and reviewed, and the test data is prepared.
 - The new features are developed and unit testing has been completed with no open critical defects.
 - The build is deployed to the TEST environment and passes the smoke test.
@@ -225,7 +224,6 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 | Production Release | 11/01/2027 | 11/01/2027 | PROD | DevOps Team | 8 hours |
 | **Total** | | | | | **298 hours** |
 
-The dates assume that the builds are delivered on time. The schedule contains a buffer for delays in development and for retesting after defect fixes.
 
 ---
 

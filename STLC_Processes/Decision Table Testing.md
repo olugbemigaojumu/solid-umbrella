@@ -1,4 +1,4 @@
-**Scenario Details:**
+## **Scenario Details:**
 
 **The scenario involves a train ticket system with various discounts.**
 

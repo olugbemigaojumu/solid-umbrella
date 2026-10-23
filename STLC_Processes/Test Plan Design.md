@@ -8,7 +8,7 @@
 | **Product** | Grocery Mate Web Shop, <https://grocerymate.masterschool.com/> |
 | **Scope** | Product Rating System, Age Verification for Alcoholic Products, Shipping Cost Changes |
 | **Based on** | Requirements document and critical tester questions ([STLC_Processes/Requirements.md](https://github.com/olugbemigaojumu/solid-umbrella/blob/main/STLC_Processes/Requirements.md)) |
-| **Status** | Draft. Assumed values: free shipping above 50 €, flat shipping fee of 4.95 €, review text of 10 to 500 characters. |
+| **Status** | Draft. Assumed values: free shipping from 50 €, flat shipping fee of 4.95 €, review text of 10 to 500 characters. |
 
 ---
 

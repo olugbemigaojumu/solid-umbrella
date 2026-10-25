@@ -8,7 +8,7 @@
 | **Product** | Grocery Mate Web Shop, <https://grocerymate.masterschool.com/> |
 | **Scope** | Product Rating System, Age Verification for Alcoholic Products, Shipping Cost Changes |
 | **Based on** | Requirements document and critical tester questions ([STLC_Processes/Requirements.md](https://github.com/olugbemigaojumu/solid-umbrella/blob/main/STLC_Processes/Requirements.md)) |
-| **Status** | Draft. Assumed values: free shipping from 50 €, flat shipping fee of 4.95 €, review text of 10 to 500 characters. |
+| **Status** | Draft |
 
 ---
 
@@ -57,15 +57,15 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 
 | ID | Feature | Summary of the detailed requirement |
 |----|---------|-------------------------------------|
-| F1 | Product Rating System | Logged-in users rate a product with 1 to 5 whole stars and can add optional written feedback of 10 to 500 characters. One rating per user and product, which the user can edit or delete. The product page, search results and category lists show the average and the number of ratings. A product without ratings shows a "no ratings yet" message. |
-| F2 | Age Verification for Alcoholic Products | When a user opens the alcoholic products category, a modal asks for the date of birth before any product is shown. Users of 18 or older get access for the session. Under 18, invalid or dismissed input must keep alcoholic products inaccessible, also through search, favorites, basket and direct URLs. |
-| F3 | Shipping Cost Changes | Orders up to 50 € have free shipping. Orders below 50 € pay a flat shipping fee of 4.95 € including VAT. The cost is shown in the basket, at checkout, in the order summary, in the confirmation email and on the invoice. The total updates immediately when the basket changes. |
+| F1 | Product Rating System | Logged-in users who have bought an item can rate the item with 1 to 5 whole stars and can add optional written feedback of 10 to 500 characters. One rating per user and product, which the user can edit or delete. The product page, search results and category lists show the average and the number of ratings. A product without ratings shows a "no ratings yet" message. |
+| F2 | Age Verification for Alcoholic Products | When a user opens the alcoholic products category, a modal asks for the date of birth in a pre-defined format before any product is shown. Users of 18 or older get access for the session. Under 18, invalid or dismissed input must keep alcoholic products inaccessible, also through search, favorites, basket and direct URLs. |
+| F3 | Shipping Cost Changes | Orders from 20€ have free shipping. Orders below 20€ pay a flat shipping fee of 5€ including VAT. The cost is shown in the basket, at checkout, in the order summary, in the confirmation email and on the invoice. The total updates immediately when the basket changes. |
 
 **Areas of the existing shop affected by the new features**
 
 | Existing functionality | Affected by |
 |------------------------|-------------|
-| Register and login | F1 (only logged-in users can rate) |
+| Register and login | F1 (only logged-in users who have bought an item can rate the item) |
 | Search, sort and categories | F1 (average rating, optional sorting by rating), F2 (alcoholic products in search results) |
 | Favorites | F2 (alcoholic products in favorites) |
 | Basket | F2 (alcoholic products in the basket), F3 (shipping cost and total) |
@@ -95,7 +95,7 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 |---------|---------------------------|
 | F1 - Product Rating | Functional testing, equivalence partitioning and boundary value analysis (stars 0 to 6, review length 0, 9, 10, 500, 501), average calculation tests, negative tests (HTML, links, empty input), usability testing |
 | F2 - Age Verification | State transition testing (unverified, verified, blocked, modal dismissed), boundary value analysis (age 17 and 18, born exactly 18 years ago), invalid input tests, access tests for every route (search, favorites, basket, direct URL), security tests (bypass of the check) |
-| F3 - Shipping Costs | Boundary value analysis around 50 € (49.99 €, 50.00 €, 50.01 €), decision table testing (threshold, discount, voucher, VAT), calculation checks of the total price, API tests with Postman, regression of checkout |
+| F3 - Shipping Costs | Boundary value analysis around 20€ (19.99€, 20.00€, 20.01€), decision table testing (threshold, discount, voucher, VAT), calculation checks of the total price, API tests with Postman, regression of checkout |
 | All | Smoke test on every new build, regression testing, GUI and cross-browser testing, accessibility checks, performance testing, security testing (XSS in review text, tampering with shipping cost through the API), exploratory testing, user acceptance testing (UAT) |
 
 **Automation:** Stable regression and API checks are automated (Python, Selenium, Pytest, Postman). New features are tested manually first and automated once they are stable.
@@ -104,7 +104,7 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 
 | Risk | Impact | Mitigation |
 |------|--------|------------|
-| Incomplete requirements (for example no threshold amount for shipping, unclear age input) | Tests cannot be designed or results cannot be judged | Clarify the open questions with the product owner before test design and confirm the assumed values (50 € threshold, 4.95 € fee). Keep a requirements Q&A log. |
+| Incomplete requirements (for example no threshold amount for shipping, unclear age input) | Tests cannot be designed or results cannot be judged | Clarify the open questions with the product owner before test design and confirm the stated values (20€ threshold, 5€ fee). Keep a requirements Q&A log. |
 | Delays in development | Less time for testing | Implement a buffer period in the schedule. |
 | Lack of test data | Scenarios cannot be executed | Create mock data sets: products with 0, 1 and many ratings, alcoholic and non-alcoholic products, baskets around the shipping threshold, users of different ages. |
 | Resource unavailability | Schedule slips | Identify backup resources. |
@@ -141,7 +141,7 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 
 ### Entry Criteria
 
-- The requirements are approved and the open questions are answered and documented in the Requirements Q&A Log, including the values 50 € (free shipping threshold), 4.95 € (shipping fee) and 10 to 500 characters (review text).
+- The requirements are approved and the open questions are answered and documented in the Requirements Q&A Log, including the values 20€ (free shipping threshold), 5€ (shipping fee) and 10 to 500 characters (review text).
 - The test plan is approved by the Test Manager.
 - Test cases are designed and reviewed, and the test data is prepared.
 - The new features are developed and unit testing has been completed with no open critical defects.
@@ -202,7 +202,7 @@ Grocery Mate is an existing web shop where customers register, search and sort p
 **Test data**
 - Users: guest, registered user, user aged 17, user aged 18, user who just turned 18, moderator or admin
 - Products: with no, one and many ratings, alcoholic, non-alcoholic and borderline (for example non-alcoholic beer)
-- Baskets: totals of 49.99 €, 50.00 € and 50.01 €, with and without discounts and vouchers
+- Baskets: totals of 19.99€, 20.00€ and 20.01€, with and without discounts and vouchers
 
 ---
 

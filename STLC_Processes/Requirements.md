@@ -59,7 +59,7 @@ Users should be able to rate products with a 5-star system and have the option t
 18. What happens to ratings when a product is deactivated or removed?
 
 **Detailed requirements:**
-- Logged-in users must be able to rate a product on its product page with 1 to 5 whole stars. Each user can submit one rating per product and can edit or delete it later. Guests who try to rate must be asked to log in first.
+- Logged-in users must be able to rate a product on its product page with 1 to 5 whole stars after they have bought the product. Each user can submit one rating per product and can edit or delete it later. Guests who try to rate must be asked to log in and buy the product first.
 - Users may add an optional written review of up to 500 characters together with the star rating. A review cannot be submitted without a star rating. The system must reject empty text, HTML and links, with a clear error message.
 - The product page, search results and category lists must show the average rating, rounded to one decimal, and the number of ratings. A product without ratings must show a “no ratings yet” message instead of an average.
 - Reviews are published immediately, listed newest first, with 10 reviews per page. Users can report a review for moderation. When a product is removed, its ratings and reviews are no longer displayed.
@@ -88,10 +88,10 @@ Alcoholic products require age verification. A modal should appear when navigati
 15. Is there a second age check at checkout or at delivery?
 
 **Detailed requirements:**
-- When a user navigates to the alcoholic products category, a modal must appear before any product is shown. The modal asks the user to enter their date of birth. Alcoholic products are those flagged as alcoholic in the product data.
+- When a user navigates to the alcoholic products category, a modal must appear before any product is shown. The modal asks the user to enter their date of birth using a pre-defined format. Alcoholic products are those flagged as alcoholic in the product data.
 - The system must validate that the user is at least 18 years old on the current date. If the user is under 18, an error message is displayed, access to the category is denied, and the user is redirected to the home page. Empty, non-date and future-date input must be rejected with an error message.
 - The check must apply to every route to alcoholic products: search results, favorites, basket and direct product URLs. Alcoholic products must not be visible or addable to the basket for unverified users.
-- A successful verification is remembered for the current session. The entered date of birth is not stored. Closing the modal (close button, ESC or browser back) must leave alcoholic products inaccessible.
+- A successful verification is remembered for the current session. Closing the modal (close button, ESC or browser back) must leave alcoholic products inaccessible.
 
 
 ### 3. Shipping Cost Changes
@@ -119,7 +119,7 @@ Free shipping for orders above a certain amount. Orders below this amount will i
 16. If a returned item drops an order below the threshold, is the shipping fee charged retroactively?
 
 **Detailed requirements:**
-- Orders with a total of or above €200 (for example) must have free shipping, so the shipping cost is 0.00 €. The total is calculated after discounts and vouchers and includes VAT. Orders below this value must be charged a flat shipping fee of 5€ (for example) including VAT.
+- Orders with a total of or above €20 must have free shipping, so the shipping cost is 0.00 €. The total is calculated after discounts and vouchers and includes VAT. Orders below this value must be charged a flat shipping fee of 5€ including VAT.
 - The shipping cost must be displayed in the basket, at checkout, in the order summary, in the confirmation email and on the invoice. The total price is calculated as the product total minus discounts plus shipping, and it must update immediately when products or quantities change.
-- The basket should show how much more the user needs to spend to get free shipping. When the threshold is reached, the shipping fee must disappear from the total.
+- The basket should perhaps show how much more the user needs to spend to get free shipping. When the threshold is reached, the shipping fee must disappear from the total.
 - Baskets that are open at the time of release must be recalculated with the new shipping rules at checkout.

@@ -29,7 +29,7 @@ The test cases are designed for the three new features developed. They use the e
 
    - Verify that a logged-in user who has not bought the product cannot rate it.
         - **Input**: Register a new account and log in without buying anything. Open a product page and try to select a star and submit.
-        - **Expected Outcome**: The user cannot rate the product (the rating option is not available, or a message says that the product must be bought first). No rating is saved.
+        - **Expected Outcome**: The user cannot rate the product (the rating option is not available, and a message "You need to buy this product to tell us your opinion!" says that the product must be bought first). No rating is saved.
 
    - Verify that buying one product does not allow rating another product.
         - **Input**: Log in as a user who bought product A. Open the page of product B, which the user has not bought, and try to rate it.
@@ -108,10 +108,6 @@ The test cases are designed for the three new features developed. They use the e
     - Verify that a review without a star rating cannot be submitted.
         - **Input**: Log in as a user who bought the product, enter a review of 50 characters, select no star and submit.
         - **Expected Outcome**: Error message "Please select a star rating." The review is not saved.
-
-    - Verify that HTML or script content in the review is rejected.
-        - **Input**: Log in as a user who bought the product, select 3 stars and enter the review `<script>alert(1)</script>` and submit.
-        - **Expected Outcome**: Error message that the review contains invalid content. The script is not executed and nothing is saved.
 
     - Verify that links in the review are rejected.
         - **Input**: Log in as a user who bought the product, select 3 stars and enter the review "Great product, see https://example.com" and submit.

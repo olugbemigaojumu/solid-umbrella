@@ -51,21 +51,7 @@ Tick the box when the criterion is met before the execution starts.
 
 ---
 
-## 4. Test Environment and Test Data
-
-### 4.1 Platforms
-
-| Platform | Browser | Version | Used for execution |
-|----------|---------|---------|--------------------|
-| Windows (PC, laptop) | Chrome | | |
-| Windows (PC, laptop) | Firefox | | |
-| Windows (PC, laptop) | Edge | | |
-| macOS (laptop) | Safari | | |
-| macOS (laptop) | Chrome | | |
-| Android (smartphone, tablet) | Chrome | | |
-| iOS (smartphone, tablet) | Safari | | |
-
-### 4.2 Test Data
+## 4. Test Data
 
 | Test data | Needed for | Value / ID |
 |-----------|------------|------------|

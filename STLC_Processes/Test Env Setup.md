@@ -3,7 +3,7 @@
 - **Application under test:** Grocery Mate Web Shop, <https://grocerymate.masterschool.com/>
 - **Environment:** TEST
 - **Test devices:** real devices with real browsers and operating systems, as listed below
-- **Test data:** user accounts, products and baskets as listed in section 4 of `[Test_Execution.md](https://github.com/olugbemigaojumu/solid-umbrella/blob/main/STLC_Processes/Test%20Execution.md)`
+- **Test data:** user accounts, products and baskets as listed in section 4 of [Test_Execution.md](https://github.com/olugbemigaojumu/solid-umbrella/blob/main/STLC_Processes/Test%20Execution.md)
 - **Tools:** Postman for API checks, Jira for defect tracking
 
 ## Platforms

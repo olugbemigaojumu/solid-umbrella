@@ -4,7 +4,6 @@ Run with:  pytest -v test_saucedemo_login.py
 Headless:  HEADLESS=1 pytest -v test_saucedemo_login.py
 """
 import os
-
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -33,6 +32,7 @@ def driver():
     if os.getenv("HEADLESS"):
         options.add_argument("--headless=new")
     options.add_argument("--window-size=1920,1080")
+
     # Disable Chrome's password-leak / save-password popups that can appear after login
     options.add_experimental_option(
         "prefs",
@@ -42,9 +42,9 @@ def driver():
             "profile.password_manager_leak_detection": False,
         },
     )
-    drv = webdriver.Chrome(options=options)
-    yield drv
-    drv.quit()
+    driver = webdriver.Chrome(options=options)
+    yield driver
+    driver.quit()
 
 
 def login(driver, username, password=PASSWORD):
@@ -55,7 +55,7 @@ def login(driver, username, password=PASSWORD):
     driver.find_element(By.ID, "login-button").click()
 
 
-@pytest.mark.parametrize("username, should_login", USERS, ids=[u for u, _ in USERS])
+@pytest.mark.parametrize("username, should_login", USERS, ids=[user for user, _ in USERS])
 def test_login(driver, username, should_login):
     login(driver, username)
     wait = WebDriverWait(driver, 15)  # performance_glitch_user is intentionally slow

@@ -1,25 +1,7 @@
-1. Write the XPath to locate the main **h1** element.
-2. Write the XPath to select the **About Us** navigational link.
-3. Write the XPath to select the **Graphic Design** dropdown link.
-4. Write the XPath to select the team member’s name **Jane Smith**.
-5. Write the XPath to select the description (which is inside the paragraph) of **SEO Services**. 
-6. Write an XPath expression to select all service items in the "**Our Services**" section.
-7. What is the XPath to select the **email input field** in the contact form?
-8. How would you write an XPath to select the **entire contact form**?
-9. Provide the XPath to select the **footer paragraph element**.
-10. What is the XPath to select the **first team member**'s (`<h4>`) name?
-11. How can you select the description of the **second service** item using XPath?
-12. What is the XPath to select the "Contact Us" section header (`<h2>` element)?
-13. Write an XPath expression to select all links within the dropdown under the "Services" navigation item.
-14. What is the XPath to select the first `<li>` under the "Our Team" section?
-15. Provide the XPath to locate the "Send Message" button in the contact form.
-
-
----
 
 # XPath Practice on a Nested HTML Document
 
-This document contains XPath expressions which are answers to the above questions for locating elements in a sample HTML page (a company site with a header, navigation, three sections and a footer).
+This document contains XPath expressions which are answers to the below questions for locating elements in a sample HTML page (a company site with a header, navigation, three sections and a footer).
 
 ## Page under test
 
@@ -107,7 +89,25 @@ This document contains XPath expressions which are answers to the above question
 </html>
 ```
 
-## The XPath Expressions
+
+1. Write the XPath to locate the main **h1** element.
+2. Write the XPath to select the **About Us** navigational link.
+3. Write the XPath to select the **Graphic Design** dropdown link.
+4. Write the XPath to select the team member’s name **Jane Smith**.
+5. Write the XPath to select the description (which is inside the paragraph) of **SEO Services**. 
+6. Write an XPath expression to select all service items in the "**Our Services**" section.
+7. What is the XPath to select the **email input field** in the contact form?
+8. How would you write an XPath to select the **entire contact form**?
+9. Provide the XPath to select the **footer paragraph element**.
+10. What is the XPath to select the **first team member**'s (`<h4>`) name?
+11. How can you select the description of the **second service** item using XPath?
+12. What is the XPath to select the "Contact Us" section header (`<h2>` element)?
+13. Write an XPath expression to select all links within the dropdown under the "Services" navigation item.
+14. What is the XPath to select the first `<li>` under the "Our Team" section?
+15. Provide the XPath to locate the "Send Message" button in the contact form.
+
+
+## The most stable and suited XPath Expressions deduced from the HTML page
 
 |    | Target | XPath |
 |----|--------|-------|

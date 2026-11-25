@@ -30,8 +30,18 @@ solid-umbrella/
 │   ├── test env setup.md               # Environment, tools, test data
 │   ├── functional test execution.md    # Execution results & defect log
 │   └── test reporting.md               # Summary, metrics, conclusions
-├── Test automation/
-│   └── test-code.py                    # Automated test scripts (Python + Selenium)
+├── Test_Automation/
+│   ├── Task 1/
+│   │   ├── word_counter.py                                # Word counter implementation
+│   │   └── test_word_counter.py                           # Tests for the word counter
+│   ├── Task 2/
+│   │   ├── register_user_on_automationexercise_website.py # User registration flow (automationexercise.com)
+│   │   ├── saucedemo_login_automation.py                  # Login automation (saucedemo)
+│   │   └── test_saucedemo_login.py                        # Pytest tests for the saucedemo login
+│   └── Task 3/
+│       ├── Sample HTML provided.html                      # Practice HTML document
+│       ├── xpath_task_1.md                                # XPath exercises, set 1
+│       └── xpath_task_2.md                                # XPath exercises, set 2
 └── README.md
 ```
 

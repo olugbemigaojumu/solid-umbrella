@@ -88,9 +88,6 @@ source venv/bin/activate        # Windows: venv\Scripts\activate
 
 # 3. Install dependencies
 pip install selenium pytest
-
-# 4. Run the tests
-pytest "Test automation/test-code.py" -v
 ```
 
 **Prerequisites:** Python 3.x, Google Chrome, and a compatible WebDriver (Selenium 4.6+ manages this automatically).

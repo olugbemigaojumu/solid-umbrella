@@ -23,13 +23,17 @@ This repository shows how I approach quality across the full testing lifecycle. 
 
 ```
 solid-umbrella/
-├── STLC/
-│   ├── requirements.md                 # Requirement analysis & testability review
-│   ├── test plan.md                    # Scope, strategy, risks, entry/exit criteria
-│   ├── test case design.md             # Test cases, techniques, coverage
-│   ├── test env setup.md               # Environment, tools, test data
-│   ├── functional test execution.md    # Execution results & defect log
-│   └── test reporting.md               # Summary, metrics, conclusions
+├── STLC_Processes/
+│   ├── Requirements.md                 # Requirement analysis & testability review
+│   ├── Test Plan Design.md             # Scope, strategy, risks, entry/exit criteria
+│   ├── Test Case Design.md             # Test cases and coverage
+│   ├── EP and BVA.md                   # Equivalence partitioning & boundary value analysis
+│   ├── Decision Table Testing.md       # Decision table technique
+│   ├── State Transition Testing.md     # State transition technique
+│   ├── Statement Coverage.md           # Statement coverage (white-box technique)
+│   ├── Test Env Setup.md               # Environment, tools, test data
+│   ├── Test Execution.md               # Execution results & defect log
+│   └── Test Reporting.md               # Summary, metrics, conclusions
 ├── Test_Automation/
 │   ├── Task 1/
 │   │   ├── word_counter.py                                # Word counter implementation
